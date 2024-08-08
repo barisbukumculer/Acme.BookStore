@@ -6,6 +6,9 @@ using Volo.Abp.AutoMapper;
 using Volo.Abp.FeatureManagement;
 using Volo.Abp.Modularity;
 using Volo.Abp.TenantManagement;
+using Volo.Abp.Domain.Entities.Caching;
+using Acme.BookStore.Books;
+using System;
 
 namespace Acme.BookStore;
 
@@ -27,5 +30,6 @@ public class BookStoreApplicationModule : AbpModule
         {
             options.AddMaps<BookStoreApplicationModule>();
         });
+        context.Services.AddEntityCache<Book,BookDto, Guid>();
     }
 }

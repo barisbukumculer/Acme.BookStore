@@ -63,7 +63,7 @@ public class BookStoreMenuContributor : IMenuContributor
             "Books",
             url: "/Books",
             icon: "fa fa-book"
-            )
+            ).RequirePermissions(BookStorePermissions.Books)
             );
 
 
